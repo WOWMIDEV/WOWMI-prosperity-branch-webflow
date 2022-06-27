@@ -4,7 +4,11 @@ export const getContentElement = (element) => {
   return hasContent ? element.textContent : null;
 };
 
-export const formattedDate = (date) => {
+export const formatDate = (date) => {
+  if (!date) {
+    return false;
+  }
+
   const newDate = new Date(date);
 
   return newDate.toLocaleString('en-US', { month: 'short', day: '2-digit', year: 'numeric' });
@@ -16,7 +20,7 @@ export const rateCls = (rating) => {
   return formattedRating.replace('.', '-');
 };
 
-export const formattedContent = (content) => {
+export const formatContent = (content) => {
   const MAX_SYMBOLS = 240;
 
   if (content.length > MAX_SYMBOLS) {
