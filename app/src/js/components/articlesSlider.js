@@ -1,9 +1,9 @@
-import { Pagination, Navigation, Swiper } from 'swiper';
+import { Pagination, Navigation, Swiper, Autoplay } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
-Swiper.use([Navigation, Pagination]);
+Swiper.use([Navigation, Pagination, Autoplay]);
 
 new Swiper('.articles__swiper', {
   speed: 600,
@@ -16,7 +16,7 @@ new Swiper('.articles__swiper', {
       slidesPerView: 1,
       spaceBetween: 20,
       pagination: {
-        el: '.swiper-pagination',
+        el: '.article__swiper-pagination',
         clickable: true,
         dynamicBullets: true,
         dynamicMainBullets: 3,
@@ -26,7 +26,7 @@ new Swiper('.articles__swiper', {
       slidesPerView: 2,
       spaceBetween: 20,
       pagination: {
-        el: '.swiper-pagination',
+        el: '.article__swiper-pagination',
         clickable: true,
         dynamicBullets: true,
         dynamicMainBullets: 3,
@@ -36,7 +36,7 @@ new Swiper('.articles__swiper', {
       slidesPerView: 2,
       spaceBetween: 20,
       pagination: {
-        el: '.swiper-pagination',
+        el: '.article__swiper-pagination',
         clickable: true,
         dynamicBullets: true,
         dynamicMainBullets: 3,

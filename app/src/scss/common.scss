@@ -1,4 +1,8 @@
-.remodal {
+.remodal-wrapper {
+  overflow: hidden !important;
+}
+
+.remodal-wrapper .remodal {
   min-height: 100%;
   width: 100vw;
   padding: 0px;
@@ -28,10 +32,10 @@
 }
 
 .swiper-pagination-bullet {
-  width: 4px;
-  min-width: 4px;
-  height: 4px;
-  min-height: 4px;
+  width: 8px;
+  min-width: 8px;
+  height: 8px;
+  min-height: 8px;
   -webkit-transition: all 0.2s ease-in-out;
   -o-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
@@ -102,10 +106,10 @@
 }
 
 .reviews__pagination .swiper-pagination-bullet {
-  width: 4px;
-  min-width: 4px;
-  height: 4px;
-  min-height: 4px;
+  width: 8px;
+  min-width: 8px;
+  height: 8px;
+  min-height: 8px;
   -webkit-transition: all 0.2s ease-in-out;
   -o-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
@@ -149,7 +153,8 @@
   }
 
   .swiper-pagination-bullets.swiper-pagination-horizontal.swiper-pagination.reviews__pagination {
-    bottom: -70px;
+    left: 50%;
+    bottom: -60px;
   }
 }
 
@@ -384,13 +389,13 @@
 
 @media (max-width: 991px) {
   .square-banner:hover .banner__heading {
-    color: var(--color20);
+    color: $color20;
   }
 }
 
 @media (max-width: 479px) {
   .square-banner:hover .banner__heading {
-    color: var(--color20);
+    color: $color20;
   }
 }
 
@@ -449,7 +454,7 @@
   right: 0 !important;
 }
 
-.remodal-wrapper {
+.remodal-wrapper.remodal-is-opened {
   padding: 0 0 0;
   overflow: hidden;
   background: $color6;
@@ -495,7 +500,7 @@
 
 .ui-slider-range-min {
   height: 100%;
-  background-color: var(--color17);
+  background-color: $color17;
   transition: all 300ms ease;
   -webkit-transition: all 300ms ease;
 }
@@ -514,7 +519,7 @@
 }
 
 @media screen and (max-width: 991px) {
-  .remodal {
+  .remodal-is-opened .remodal {
     min-height: 0;
     height: auto;
     width: 100%;
@@ -539,9 +544,38 @@
   }
 }
 
+@media screen and (max-width: 475px) {
+  .remodal-is-opened .remodal {
+    height: 100%;
+  }
+}
+
 @media screen and (max-width: 991px) {
-  .remodal {
+  .remodal-is-opened .remodal {
     background: $color6;
+  }
+
+  .up-core-huge {
+    height: 100%;
+  }
+
+  .quiz-form-block {
+    display: flex;
+  }
+
+  .quiz__result .cross.w-inline-block {
+    right: 0;
+    top: 50px;
+  }
+
+  .quiz__result .tw-logo.tw-logo-top.tw-hiden-logo {
+    width: 160px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .quiz__result .tw-logo.tw-logo-top.tw-hiden-logo {
+    width: 120px;
   }
 }
 
@@ -571,7 +605,7 @@
 
 .button {
   position: relative;
-  background: var(--color10);
+  background: $color10;
   z-index: 1;
 }
 
@@ -583,7 +617,7 @@
   right: 0;
   bottom: 0;
   left: 0;
-  background: var(--color18);
+  background: $color18;
   z-index: -1;
   transition: opacity 0.3s ease-in-out;
   opacity: 0;
@@ -608,7 +642,7 @@
   right: 0;
   bottom: 0;
   left: 0;
-  background: linear-gradient(98.74deg, var(--color12), var(--color16) 94.47%);
+  background: linear-gradient(98.74deg, $color12, $color16 94.47%);
   z-index: -1;
   transition: opacity 0.3s ease-in-out;
   opacity: 0;
@@ -634,36 +668,13 @@
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: var(--color19);
+  background: $color19;
   border-radius: 50px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--color18);
-}
-
-/************ ADD YOUR VALUES BELOW ************/
-:root {
-  /* ----------- Colors ----------- */
-  --list-bg-color: $color6;
-  --list-text-color: inherit; /* Use "inherit" to take on parent text color */
-  --select-field-arrow-color: $color7; /* This is the select field arrow color */
-  --border-color-active: $color6; /* Active State */
-  --border-color-hover: $color6; /* Select Field could be the same as your form field border color */
-  --list-item-bg-color: rgba(255, 255, 255, 0.2); /* Select Field Hover/Focus State */
-
-  /* ----------- Spacing ----------- */
-  --select-field-padding-left: 12px; /* Match the padding values for your form fields */
-  --select-field-padding-right: 12px; /* Match the padding values for your form fields */
-  --list-padding-top-bottom: 10px; /* This is the top and bottom padding for the dropdown list */
-  --list-max-height: 150px; /* You can set this to "Auto" as well */
-  --list-item-padding-left: 18px;
-  --list-item-padding-right: 18px;
-  --list-item-min-height: 40px; /* This is the height of each list item in the dropdown */
-  --list-item-line-height: 40px; /* This is the height of each list item in the dropdown */
-
-  /* ^^^  Make sure both "line-height" and "min-height" are the same! ^^^  */
+  background: $color18;
 }
 
 /************ END OF CUSTOM VALUES ************/
@@ -671,8 +682,8 @@
   -webkit-tap-highlight-color: transparent;
   box-sizing: border-box;
   clear: both;
-  padding-left: var(--select-field-padding-left);
-  padding-right: var(--select-field-padding-right);
+  padding-left: $select-field-padding-left;
+  padding-right: $select-field-padding-right;
   position: relative;
   text-align: left !important;
   -webkit-transition: all 0.2s ease-in-out;
@@ -685,18 +696,18 @@
 }
 
 .nice-select:hover {
-  border-color: var(--border-color-hover);
+  border-color: $border-color-hover;
 }
 
 .nice-select:active,
 .nice-select.open,
 .nice-select:focus {
-  border-color: var(--border-color-active);
+  border-color: $border-color-active;
 }
 
 .nice-select:after {
-  border-bottom: 2px solid var(--select-field-arrow-color);
-  border-right: 2px solid var(--select-field-arrow-color);
+  border-bottom: 2px solid $select-field-arrow-color;
+  border-right: 2px solid $select-field-arrow-color;
   content: '';
   display: block;
   height: 5px;
@@ -776,8 +787,8 @@
 }
 
 .nice-select .list {
-  background-color: var(--list-bg-color);
-  color: var(--list-text-color);
+  background-color: $list-bg-color;
+  color: $list-text-color;
   border-radius: 0;
   box-shadow: 0 7px 20px 0 rgba(68, 68, 68, 0.11);
   border-color: 3px solid $color6;
@@ -785,14 +796,14 @@
   margin-top: 4px;
   opacity: 0;
   overflow: hidden;
-  padding: var(--list-padding-top-bottom) 0;
+  padding: $list-padding-top-bottom 0;
   pointer-events: none;
   position: absolute;
   top: 100%;
   left: 0;
   overflow-y: scroll;
   overflow-x: hidden;
-  max-height: var(--list-max-height);
+  max-height: $list-max-height;
   -webkit-transform-origin: 50% 0;
   -ms-transform-origin: 50% 0;
   transform-origin: 50% 0;
@@ -811,12 +822,12 @@
 .nice-select .option {
   cursor: pointer;
   font-weight: 400;
-  line-height: var(--list-item-line-height);
+  line-height: $list-item-line-height;
   list-style: none;
-  min-height: var(--list-item-min-height);
+  min-height: $list-item-min-height;
   outline: none;
-  padding-left: var(--list-item-padding-left);
-  padding-right: var(--list-item-padding-right);
+  padding-left: $list-item-padding-left;
+  padding-right: $list-item-padding-right;
   text-align: left;
   -webkit-transition: all 0.2s;
   transition: all 0.2s ease-in-out;
@@ -827,13 +838,13 @@
 }
 
 span.current {
-  color: var(--list-text-color);
+  color: $list-text-color;
 }
 
 .nice-select .option:hover,
 .nice-select .option.focus,
 .nice-select .option.selected.focus {
-  background-color: var(--list-item-bg-color);
+  background-color: $list-item-bg-color;
   font-weight: 600;
 }
 
@@ -843,7 +854,7 @@ span.current {
 
 .nice-select .option.disabled {
   background-color: transparent;
-  color: var(--color11);
+  color: $color11;
   cursor: default;
 }
 
@@ -868,12 +879,12 @@ span.current {
   -ms-transform: translateY(0);
   -o-transform: translateY(0);
   transform: translateY(0);
-  color: var(--color12);
+  color: $color12;
 }
 .ui-widget-content {
-  border: 0 solid var(--color14);
+  border: 0 solid $color14;
   background-image: none !important;
-  color: var(--color13);
+  color: $color13;
 }
 .slide-range .field_slider {
   border-color: $color7;
@@ -906,14 +917,14 @@ span.current {
   transform: translateY(-50%);
   width: 15px;
   cursor: pointer;
-  background-color: var(--color18);
+  background-color: $color18;
 }
 .ui-slider-range {
   border: 0 solid transparent;
 }
 .ui-widget-header {
   background-image: none;
-  background-color: var(--color18);
+  background-color: $color18;
 }
 .minmax {
   margin-top: 15px;
@@ -921,7 +932,7 @@ span.current {
 .minmax span {
   display: inline-block;
   font-size: 14px;
-  color: var(--color18);
+  color: $color18;
 }
 .minmax span.minimum {
   float: left;
@@ -929,7 +940,7 @@ span.current {
 .minmax span {
   display: inline-block;
   font-size: 14px;
-  color: var(--color18);
+  color: $color18;
 }
 .minmax span.maximum {
   float: right;
@@ -1110,7 +1121,7 @@ span.current {
 
 .calc-wrp .checkbox-inline input[type='checkbox']:checked ~ .checkbox__icon {
   background-color: #07becb;
-  background-image: url('../img/check.svg');
+  background-image: url('../svg/check.svg');
   background-size: auto;
   border: 1px solid #07becb;
 }
@@ -1219,8 +1230,12 @@ span.current {
   }
 
   .calc-wrp .legend__text {
-    color: var(--color21);
+    color: $color21;
     font-size: 10px;
   }
 }
 /* CALCULATOR */
+
+a.w-webflow-badge {
+  display: none !important;
+}

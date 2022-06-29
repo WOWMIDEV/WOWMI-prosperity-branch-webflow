@@ -1,9 +1,9 @@
-import { Swiper, Navigation } from 'swiper';
+import { Swiper, Navigation, Pagination, Autoplay } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
-Swiper.use([Navigation]);
+Swiper.use([Navigation, Pagination, Autoplay]);
 
 export const reviewsSliderInit = () => {
   new Swiper('.reviews__slider', {
@@ -19,7 +19,7 @@ export const reviewsSliderInit = () => {
       prevEl: '.slider__arrow--prev',
     },
     pagination: {
-      el: '.swiper-pagination',
+      el: '.reviews__pagination',
       clickable: true,
     },
     breakpoints: {
@@ -27,7 +27,7 @@ export const reviewsSliderInit = () => {
         slidesPerView: 1,
         spaceBetween: 20,
         pagination: {
-          el: '.swiper-pagination',
+          el: '.reviews__pagination',
           clickable: true,
           dynamicBullets: true,
           dynamicMainBullets: 3,
@@ -37,7 +37,7 @@ export const reviewsSliderInit = () => {
         slidesPerView: 1,
         spaceBetween: 20,
         pagination: {
-          el: '.swiper-pagination',
+          el: '.reviews__pagination',
           clickable: true,
           dynamicBullets: true,
           dynamicMainBullets: 3,
@@ -47,7 +47,7 @@ export const reviewsSliderInit = () => {
         slidesPerView: 1,
         spaceBetween: 20,
         pagination: {
-          el: '.swiper-pagination',
+          el: '.reviews__pagination',
           clickable: true,
           dynamicBullets: true,
           dynamicMainBullets: 3,
@@ -57,7 +57,7 @@ export const reviewsSliderInit = () => {
         slidesPerView: 1,
         spaceBetween: 20,
         pagination: {
-          el: '.swiper-pagination',
+          el: '.reviews__pagination',
           clickable: true,
           dynamicBullets: true,
           dynamicMainBullets: 3,
@@ -67,7 +67,7 @@ export const reviewsSliderInit = () => {
         slidesPerView: 1,
         spaceBetween: 20,
         pagination: {
-          el: '.swiper-pagination',
+          el: '.reviews__pagination',
           clickable: true,
           dynamicBullets: true,
           dynamicMainBullets: 3,
@@ -77,7 +77,7 @@ export const reviewsSliderInit = () => {
         slidesPerView: 1,
         spaceBetween: 20,
         pagination: {
-          el: '.swiper-pagination',
+          el: '.reviews__pagination',
           clickable: true,
           dynamicBullets: true,
           dynamicMainBullets: 4,

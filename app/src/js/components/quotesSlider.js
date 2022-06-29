@@ -1,15 +1,15 @@
-import { Swiper } from 'swiper';
+import { Swiper, Autoplay } from 'swiper';
 import 'swiper/css';
-// import "swiper/css/navigation";
-// import "swiper/css/pagination";
 
 /* QUOTES SLIDER */
+
+Swiper.use([Autoplay]);
 
 new Swiper('.quotes-slider', {
   slidesPerView: 1,
   spaceBetween: 0,
   speed: 1000,
-  loop: true,
+  effect: 'slide',
   autoplay: {
     delay: 5000,
   },
