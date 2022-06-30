@@ -14,7 +14,7 @@ const buysideWidget = () => {
 
   const buysideWidgetKey = buysideWidgetKeyEl.textContent;
   const buysideWidgetUserName = buysideWidgetUserNameEl.textContent.replace(' ', '');
-  const buysideWidget = document.createElement('div');
+  const buysideWidgetEl = document.createElement('div');
   const scriptApi = document.createElement('script');
   const arrow = `<svg xmlns="http://www.w3.org/2000/svg" width="6" height="11" viewBox="0 0 6 11" fill="none">
                   <path d="M1 9.5L5 5.5L1 1.5"
@@ -40,16 +40,17 @@ const buysideWidget = () => {
       if (!window.buyside_widget) {
         addBuysideWidgetInitConfig();
       } else {
+        // eslint-disable-next-line no-undef
         buyside_widget(buysideConfig);
       }
     }, 400);
   };
 
-  buysideWidget.id = 'buyside-widget-container';
+  buysideWidgetEl.id = 'buyside-widget-container';
   scriptApi.src = '//api.buyermls.com/widget/buyside-widget-v31.js';
 
   new Promise((resolve) => {
-    buysideWidgetWrapper.append(buysideWidget);
+    buysideWidgetWrapper.append(buysideWidgetEl);
     buysideWidgetWrapper.append(scriptApi);
     setTimeout(() => {
       resolve();
@@ -61,6 +62,8 @@ const buysideWidget = () => {
 
     addBuysideWidgetInitConfig();
   });
+
+  return true;
 };
 
 buysideWidget();

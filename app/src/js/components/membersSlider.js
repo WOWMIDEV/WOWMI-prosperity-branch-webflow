@@ -136,7 +136,7 @@ const addRemoveCloseSlideButton = (slide, action = 'remove') => {
   return true;
 };
 
-slides.forEach((slide, i) => {
+slides.forEach((slide) => {
   slide.addEventListener('mouseover', () => {
     addRemoveCloseSlideButton(slide, 'add');
     slide.classList.add('js--open');
