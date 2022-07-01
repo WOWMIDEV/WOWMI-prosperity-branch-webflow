@@ -70,9 +70,22 @@ const initReviews = () => {
       return mergedData;
     })
     .then((reviews) => {
+      if (reviews.length === 0) {
+        // eslint-disable-next-line no-console
+        console.warn('No reviews');
+
+        sectionReviews.remove();
+
+        return false;
+      }
+
       renderReviews(elements, reviews);
+
+      return true;
     })
-    .then(() => reviewsSliderInit());
+    .then((success) => {
+      if (success) reviewsSliderInit();
+    });
 
   return true;
 };

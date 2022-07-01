@@ -1,7 +1,8 @@
 import { formatPhoneNumber, rateCls } from './utils';
 
-import phoneIcon from '../../../svg/phone.svg';
+import phoneSvg from '../../../svg/phone.svg';
 
+const phoneSrc = new URL(phoneSvg, import.meta.url);
 const phoneHtml = (phone) => {
   if (!phone) {
     return '';
@@ -37,9 +38,7 @@ export const htmlTemplateReview = (review) => {
       
       <div class="yelp__phone">
         <span class="ico">
-          <object type="image/svg+xml" data="${phoneIcon}" class="phone">
-             Phone:
-          </object>
+          <img src="${phoneSrc}" class="phone" alt="phone"/>
         </span>
         ${phoneHtml(phone)}
         <span class="yelp__location">${address}</span>
