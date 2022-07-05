@@ -2,7 +2,7 @@ FROM ubuntu
 
 WORKDIR /home/app
 
-COPY /app /home/app
+COPY /app.dist /home/app
 
 # PACKAGES
 RUN apt-get update && \

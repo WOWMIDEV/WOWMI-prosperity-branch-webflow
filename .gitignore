@@ -4,10 +4,10 @@
 #     https://www.atlassian.com/git/tutorials/saving-changes/gitignore
 
 # APP
-app/dist/
-app/development/
-app/node_modules/
-app/.parcel-cache/
+app.dist/dist/
+app.dist/development/
+app.dist/node_modules/
+app.dist/.parcel-cache/
 
 # Compiled Java class files
 *.class
