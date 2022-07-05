@@ -28,7 +28,8 @@ module.exports = {
   },
 
   entry: {
-    index: './src/js/index.js',
+    home: './src/js/home.js',
+    member: './src/js/member.js',
   },
 
   output: {

@@ -17,11 +17,6 @@ const navBarBtnHandler = (isNavBarBtnAccess, navBarBtn) => {
 const overflowBodyForOpenMenu = () => {
   const navBarBtn = document.querySelector('.navbar__btn');
   const pageOverlay = document.querySelector('.page-overlay');
-
-  if (!navBarBtn || !pageOverlay) {
-    return false;
-  }
-
   const isNavBarBtnAccess = () => getComputedStyle(navBarBtn).display === 'block';
 
   navBarBtn.addEventListener('click', () => navBarBtnHandler(isNavBarBtnAccess, navBarBtn));
