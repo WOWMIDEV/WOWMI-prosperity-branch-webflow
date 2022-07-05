@@ -38,12 +38,18 @@ const customSizeForMemberSlider = () => {
   };
 
   const initMembersSlided = () => {
-    const { slides } = elements;
+    const { slides, memberSliderInner } = elements;
+
+    if (!memberSliderInner) {
+      return false;
+    }
 
     [...slides].forEach((slide) => {
       slide.addEventListener('mouseenter', onMembersSlideMouseenter);
       slide.addEventListener('mouseleave', onMembersSlideMouseleave);
     });
+
+    return true;
   };
 
   initMembersSlided();
