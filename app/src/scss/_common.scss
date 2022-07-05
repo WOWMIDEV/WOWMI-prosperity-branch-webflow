@@ -1239,3 +1239,20 @@ span.current {
 a.w-webflow-badge {
   display: none !important;
 }
+
+/* MEMBERS */
+@import 'styles';
+
+@media (max-width: 479px) {
+  [data-page='member'] .slider__arrow--prev {
+    left: 30px;
+  }
+
+  [data-page='member'] .slider__arrow.slider__arrow--next {
+    right: 30px;
+  }
+
+  [data-page='member'] .swiper-pagination-bullets.swiper-pagination-horizontal.swiper-pagination.reviews__pagination {
+    bottom: -65px;
+  }
+}
